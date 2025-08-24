@@ -27,8 +27,8 @@ void setup() {
     dashboardPage = verificationPage.validVerify(verificationCode);
     firstCardInfo = DataHelper.getFirstCardInfo();
     secondCardInfo = DataHelper.getSecondCardInfo();
-    firstCardBalance = dashboardPage.getCardBalance(firstCardInfo);
-    secondCardBalance = dashboardPage.getCardBalance(secondCardInfo);
+    firstCardBalance = dashboardPage.getCardBalance();
+    secondCardBalance = dashboardPage.getCardBalance();
     }
 
     @Test

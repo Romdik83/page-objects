@@ -14,15 +14,15 @@ public class DashboardPage {
     private final String balanceStart = "баланс: ";
     private final String balanceFinish = "р.";
     private final SelenideElement heading = $("[data-test-id=dashboard]");
-    private final ElementsCollection cards = $$(".list__item div");
+    private ElementsCollection cards = $$(".list__item div");
     private final SelenideElement reloadButton = $("[data-test-id='action-reload']");
 
     public DashboardPage() {
         heading.shouldBe(visible);
     }
 
-    public int getCardBalance(DataHelper.CardInfo cardInfo) {
-        var text = getCard(cardInfo).getText();
+    public int getCardBalance() {
+        var text = cards.first().text();
         return extractBalance(text);
     }
 
